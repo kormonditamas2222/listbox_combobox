@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="btn_2">
-        <ListBox x:Name="lbox_1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="96,23,493,217" SelectionMode="Extended"/>
-        <TextBox x:Name="tb_1" HorizontalAlignment="Left" Margin="375,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btn_1" Content="Hozzáadás" HorizontalAlignment="Left" Margin="405,57,0,0" VerticalAlignment="Top" Click="btn_1_Click"/>
-        <Button x:Name="btn_clear" Content="Törlés" HorizontalAlignment="Left" Margin="416,100,0,0" VerticalAlignment="Top" Click="btn_clear_Click"/>
+        <ListBox x:Name="lb_bal" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="108,10,518,207" SelectionMode="Extended"/>
+        <ListBox x:Name="lb_jobb" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="481,10,145,207" SelectionMode="Extended"/>
+        <Button x:Name="btn_jobbra" Content="-->"  Width="100" Height="60" Margin="329,146,371,228" Click="btn_jobbra_Click" />
+        <Button x:Name="btn_balra" Content="&lt;--"  Width="100" Height="60" Margin="329,59,371,315" Click="btn_balra_Click" />
 
 
     </Grid>

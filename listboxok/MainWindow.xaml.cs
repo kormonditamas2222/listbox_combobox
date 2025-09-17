@@ -16,44 +16,41 @@ namespace listboxok
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> elemek = ["alma", "banán", "körte"];
+        List<string> balLista = [];
+        List<string> jobbLista = [];
         public MainWindow()
         {
             InitializeComponent();
-            lbox_1.ItemsSource = elemek;
+            balLista.Add("elem");
+            balLista.Add("hát");
+            balLista.Add("gömb");
+            balLista.Add("volt");
+            lb_bal.ItemsSource = balLista;
+            lb_jobb.ItemsSource = jobbLista;
         }
 
-        private void btn_1_Click(object sender, RoutedEventArgs e)
+        private void btn_jobbra_Click(object sender, RoutedEventArgs e)
         {
-            string ujElem = tb_1.Text.Trim();
-            if (!string.IsNullOrEmpty(ujElem)) 
-            { 
-                elemek.Add(ujElem);
-                lbox_1.Items.Refresh();
-                tb_1.Clear();
-            }
-            else
+            var kijelolt = lb_bal.SelectedItems.Cast<string>().ToList();
+            foreach (var item in kijelolt)
             {
-                MessageBox.Show(this, "A mezőt kötelező kitölteni!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Warning);
+                balLista.Remove(item);
+                jobbLista.Add(item);
             }
+            lb_bal.Items.Refresh();
+            lb_jobb.Items.Refresh();
         }
 
-        private void btn_clear_Click(object sender, RoutedEventArgs e)
+        private void btn_balra_Click(object sender, RoutedEventArgs e)
         {
-            if (lbox_1.SelectedItems.Count == 0) 
+            var kijelolt = lb_jobb.SelectedItems.Cast<string>().ToList();
+            foreach (var item in kijelolt)
             {
-                MessageBox.Show(this, "Nincs kiválasztott elem!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
+                jobbLista.Remove(item);
+                balLista.Add(item);
             }
-            else
-            {
-                var torlendo = lbox_1.SelectedItems.Cast<string>().ToList();
-                foreach (var item in torlendo)
-                {
-                    elemek.Remove(item);
-                }
-                lbox_1.Items.Refresh();
-            }
+            lb_bal.Items.Refresh();
+            lb_jobb.Items.Refresh();
         }
     }
 }
