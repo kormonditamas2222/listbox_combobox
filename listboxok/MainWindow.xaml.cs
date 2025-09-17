@@ -37,5 +37,23 @@ namespace listboxok
                 MessageBox.Show(this, "A mezőt kötelező kitölteni!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+        private void btn_clear_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbox_1.SelectedItems.Count == 0) 
+            {
+                MessageBox.Show(this, "Nincs kiválasztott elem!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            else
+            {
+                var torlendo = lbox_1.SelectedItems.Cast<string>().ToList();
+                foreach (var item in torlendo)
+                {
+                    elemek.Remove(item);
+                }
+                lbox_1.Items.Refresh();
+            }
+        }
     }
 }
