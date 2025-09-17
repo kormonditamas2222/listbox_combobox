@@ -27,6 +27,8 @@ namespace listboxok
             balLista.Add("volt");
             lb_bal.ItemsSource = balLista;
             lb_jobb.ItemsSource = jobbLista;
+
+            FrissitGombok();
         }
 
         private void btn_jobbra_Click(object sender, RoutedEventArgs e)
@@ -39,6 +41,8 @@ namespace listboxok
             }
             lb_bal.Items.Refresh();
             lb_jobb.Items.Refresh();
+
+            FrissitGombok();
         }
 
         private void btn_balra_Click(object sender, RoutedEventArgs e)
@@ -51,6 +55,13 @@ namespace listboxok
             }
             lb_bal.Items.Refresh();
             lb_jobb.Items.Refresh();
+
+            FrissitGombok();
+        }
+        private void FrissitGombok()
+        {
+            btn_jobbra.IsEnabled = balLista.Count > 0;
+            btn_balra.IsEnabled = jobbLista.Count > 0;
         }
     }
 }
