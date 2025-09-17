@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="cmb_1" HorizontalAlignment="Left" Margin="152,94,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_1_SelectionChanged"/>
-        <Label x:Name="lb_out" Content="" HorizontalAlignment="Left" Margin="317,94,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbox_1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="96,23,493,217"/>
+
 
     </Grid>
 </Window>

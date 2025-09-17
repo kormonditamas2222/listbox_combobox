@@ -19,18 +19,9 @@ namespace listboxok
         public MainWindow()
         {
             InitializeComponent();
-
-            List<string> szinek = new List<string> {"Piros", "Zöld", "Skibidi"};
-
-            cmb_1.ItemsSource = szinek;
+            List<string> elemek = ["alma", "banán", "körte"];
+            lbox_1.ItemsSource = elemek;
         }
 
-        private void cmb_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cmb_1.SelectedItem != null)
-            {
-                lb_out.Content = "Szín: " + cmb_1.SelectedItem.ToString();
-            }
-        }
     }
 }
